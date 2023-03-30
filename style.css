@@ -22,7 +22,7 @@ body {
 
  /* Loader css */
 
- /* #loader {
+ #loader {
   position: fixed;
   height: 100vh;
   width: 100%;
@@ -48,7 +48,7 @@ body {
   100% {
     transform: rotate(360deg);
   }
-} */
+}
 
 /* navbar css */
 
