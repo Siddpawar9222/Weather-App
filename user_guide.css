@@ -1,0 +1,205 @@
+@import url("https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed:wght@200;400&family=Ubuntu:ital@1&display=swap");
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Work Sans", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+  /* 1rem = 10px */
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #85ffbd;
+  background-image: linear-gradient(45deg, #85ffbd 0%, #fffb7d 100%);
+}
+
+/* navbar css */
+
+.header {
+    padding: 0 4.8rem;
+    height: 10rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f4d03f;
+    background-image: linear-gradient(132deg, #f4d03f 0%, #16a085 100%);
+  }
+   header , footer{
+    border-radius: 0.8rem;
+   }
+  #app_name {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 2rem;
+    /* margin: 0rem 1rem 0rem 1rem; */
+  }
+  
+  .navbar-list {
+    display: flex;
+    gap: 4.8rem;
+    list-style: none;
+  }
+  
+  .navbar-link:link,
+  .navbar-link:visited {
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 500;
+    color: #212529;
+    transition: all 0.3s;
+  }
+  
+  .navbar-link:hover,
+  .navbar-link:active {
+    color: #364fc7;
+  }
+  
+  #city,
+  #submit_button {
+    font-size: 2rem;
+    box-shadow: 0.5rem 0.5rem 1.5rem rgba(0, 0, 0, 0.6);
+    border-radius: 0.3rem;
+  }
+  
+  #city {
+    width: 20rem;
+    height: 3rem;
+  }
+  #submit_button {
+    height: 3rem;
+    width: 7rem;
+    margin: 0rem 1rem 0rem 1rem;
+  } 
+   
+  #city:focus , #submit_button:focus{
+     
+    outline-width: 0.22rem;
+    outline-style: solid;
+    outline-color: skyblue;
+  
+  }
+  
+  
+  
+  .mobile-navbar-btn {
+    display: none;
+    background: transparent;
+    cursor: pointer;
+  }
+  
+  .mobile-nav-icon {
+    width: 4rem;
+    height: 4rem;
+    color: #212529;
+  }
+  
+  .mobile-nav-icon[name="close-outline"] {
+    display: none;
+  }
+   
+  main{
+    font-size: 1.9rem;
+     height: calc(100vh - 10rem);
+     display: flex;
+     flex-wrap: wrap;
+     flex-direction: column; 
+  
+     align-items: flex-start ;
+  } 
+ main  ul{
+    margin-left: 2rem;
+    margin-top: 2rem;
+    list-style : solid circle ;
+  }
+  main ul li {
+    padding: 0.4rem;
+  }
+
+  @media (max-width: 1216px) {
+    /* Responsive  navbar */
+   .mobile-navbar-btn {
+     display: block;
+     z-index: 999;
+     border: 3px solid #212529;
+     color: #212529;
+   }
+ 
+   .header {
+     position: relative;
+   }
+ 
+   .navbar {
+     /* display: none; */
+     width: 30%;
+     height: 100vh;
+     background: #e7f5ff;
+     position: absolute;
+     top: 0;
+     right: 0;
+ 
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ 
+     /* to get the tranisition  */
+     transform: translateX(100%);
+     transition: all 0.5s linear;
+ 
+     opacity: 0;
+     visibility: hidden;
+     pointer-events: none;
+   }
+ 
+   .navbar-list {
+     flex-direction: column;
+     align-items: center;
+   }
+ 
+   .active .navbar {
+     transform: translateX(0);
+     opacity: 1;
+     visibility: visible;
+     pointer-events: auto;
+   }
+ 
+   .active .mobile-navbar-btn .mobile-nav-icon[name="close-outline"] {
+     display: block;
+   }
+ 
+   .active .mobile-navbar-btn .mobile-nav-icon[name="menu-outline"] {
+     display: none;
+   }
+}
+
+@media(max-width:454px){
+    html{
+      font-size: 49%;
+    }
+    .header{
+      height: auto;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: center;
+    }
+    #app_name{
+      text-align: center;
+      margin:1.2rem 0;
+    }
+    #city , #submit_button , #form_center{
+          margin: 0;
+    }
+    #city , #submit_button{
+      margin:1.1rem 0;
+    }
+    .mobile-navbar-btn{
+      margin: 1rem 0;
+    }
+  }

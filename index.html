@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="android-icon-96x96.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>My Weather</title>
+  </head>
+  <body>
+    
+    <div id="loader">
+      <div class="loading"></div>
+    </div>
+
+
+
+    <header class="header">
+    <a id="app_name" class="navbar-link" href="index.html">Weather App</a>
+
+      <nav class="navbar">
+        <ul class="navbar-list">
+          <li><a class="navbar-link" href="index.html">Home</a></li>
+          <li><a class="navbar-link" href="#">About App</a></li>
+          <li><a class="navbar-link" href="user_guide.html">User Guide</a></li>
+        </ul>
+      </nav> 
+
+      <form id="form_center" action="">
+        <input type="text" list="list" placeholder="Search City" id="city" required />
+        <datalist id="list"></datalist>
+        <button type="button" id="submit_button">Search</button>
+      </form>
+
+      <div class="mobile-navbar-btn">
+        <ion-icon name="menu-outline" class="mobile-nav-icon"></ion-icon>
+        <ion-icon name="close-outline" class="mobile-nav-icon"></ion-icon>
+      </div>
+    </header>
+    <h1>Weather for <span id="cityName"></span></h1>
+    <main id="container_main">
+      <article class="container_article card1">
+        <section class="center_section heading">Temperature</section>
+        <big>
+          <span id="temp1"></span><span class="light-color">&nbsp;&#8451;</span>
+        </big>
+        <li>Temperature is <span id="temp"></span>&nbsp;&#8451;</li>
+        <li>Minimum temperture is <span id="min_temp"></span>&nbsp;&#8451;</li>
+        <li>Maximum temperature is <span id="max_temp"></span>&nbsp;&#8451;</li>
+        <li>Feels Like <span id="feels_like"></span>&nbsp;&#8451;</li>
+       </article>
+       
+      <article class="container_article card2">
+        <section class="center_section heading">Humidity Info</section>
+        <big>
+          <span id="humidity1"></span><span class="light-color">&nbsp;%</span>
+        </big>
+        <li>Humidinity <span id="humidity"></span>&nbsp;%</li>
+
+        <li>Clould pct <span id="clould_pct"></span>&nbsp;Pascal</li>
+      </article>
+
+      <article class="container_article card3">
+        <section class="center_section heading">Wind and other Info</section>
+        <big>
+          <span id="wind_speed1"></span
+          ><span class="light-color">&nbsp;kmph</span>
+        </big>
+        <li>Wind Speed is <span id="wind_speed"></span>&nbsp;kmph</li>
+        <li>Wind Degree is <span id="wind_degrees"></span>&nbsp;kmph</li>
+        <li>Sunrise Time is <span id="sunrise"></span></li>
+        <li>Sunset Time is <span id="sunset"></span></li>
+      </article>
+    </main>
+    <h1 >Weather of other common places</h1>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>City</th>
+          <th>Temperature</th>
+          <th>Minimum Temperature</th>
+          <th>Maxmimum Temperature</th>
+          <th>Feels Like</th>
+          <th>Humidity</th>
+          <th>Clould pct</th>
+          <th>Wind Speed</th>
+          <th>Wind Degree</th>
+          <th>Sunrise Time</th>
+          <th>Sunset Time</th>
+        </tr>
+        <tr>
+          <th></th>
+          <th>(In &#8451;)</th>
+          <th>(In &#8451;)</th>
+          <th>(In &#8451;)</th>
+          <th>(In &#8451;)</th>
+          <th>(In %)</th>
+          <th>(In Pascal)</th>
+          <th>(In kmph)</th>
+          <th>(In kmph)</th>
+          <th>(In am/pm)</th>
+          <th>(In am/pm)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="cityNameA" data-label="City"></td>
+          <td id="tempA" data-label="Temperature (In &#8451;)"></td>
+          <td id="min_tempA" data-label="Minimum Temperature (In &#8451;)"></td>
+          <td id="max_tempA" data-label="Maximum Temperature (In &#8451;)"></td>
+          <td id="feels_likeA" data-label="Feels Like (In &#8451;)"></td>
+          <td id="humidityA" data-label="Humidity (In %)"></td>
+          <td id="clould_pctA" data-label="Clould pct (In Pascal)"></td>
+          <td id="wind_speedA" data-label="Wind Speed (In kmph)"></td>
+          <td id="wind_degreesA" data-label="Wind Degree (In kmph)"></td>
+          <td id="sunriseA" data-label="Sunrise Time (In am/pm)"></td>
+          <td id="sunsetA" data-label="Sunset Time (In am/pm)"></td>
+        </tr>
+        <tr>
+          <td id="cityNameB" data-label="City"></td>
+          <td id="tempB" data-label="Temperature (In &#8451;)"></td>
+          <td id="min_tempB" data-label="Minimum Temperature (In &#8451;)"></td>
+          <td id="max_tempB" data-label="Maximum Temperature (In &#8451;)"></td>
+          <td id="feels_likeB" data-label="Feels Like (In &#8451;)"></td>
+          <td id="humidityB" data-label="Humidity (In %)"></td>
+          <td id="clould_pctB" data-label="Clould pct (In Pascal)"></td>
+          <td id="wind_speedB" data-label="Wind Speed (In kmph)"></td>
+          <td id="wind_degreesB" data-label="Wind Degree (In kmph)"></td>
+          <td id="sunriseB" data-label="Sunrise Time (In am/pm)"></td>
+          <td id="sunsetB" data-label="Sunset Time (In am/pm)"></td>
+        </tr>
+        <tr>
+          <td id="cityNameC" data-label="City"></td>
+          <td id="tempC" data-label="Temperature (In &#8451;)"></td>
+          <td id="min_tempC" data-label="Minimum Temperature (In &#8451;)"></td>
+          <td id="max_tempC" data-label="Maximum Temperature (In &#8451;)"></td>
+          <td id="feels_likeC" data-label="Feels Like (In &#8451;)"></td>
+          <td id="humidityC" data-label="Humidity (In %)"></td>
+          <td id="clould_pctC" data-label="Clould pct (In Pascal)"></td>
+          <td id="wind_speedC" data-label="Wind Speed (In kmph)"></td>
+          <td id="wind_degreesC" data-label="Wind Degree (In kmph)"></td>
+          <td id="sunriseC" data-label="Sunrise Time (In am/pm)"></td>
+          <td id="sunsetC" data-label="Sunset Time (In am/pm)"></td>
+        </tr>
+        <tr>
+          <td id="cityNameD" data-label="City"></td>
+          <td id="tempD" data-label="Temperature (In &#8451;)"></td>
+          <td id="min_tempD" data-label="Minimum Temperature (In &#8451;)"></td>
+          <td id="max_tempD" data-label="Maximum Temperature (In &#8451;)"></td>
+          <td id="feels_likeD" data-label="Feels Like (In &#8451;)"></td>
+          <td id="humidityD" data-label="Humidity (In %)"></td>
+          <td id="clould_pctD" data-label="Clould pct (In Pascal)"></td>
+          <td id="wind_speedD" data-label="Wind Speed (In kmph)"></td>
+          <td id="wind_degreesD" data-label="Wind Degree (In kmph)"></td>
+          <td id="sunriseD" data-label="Sunrise Time (In am/pm)"></td>
+          <td id="sunsetD" data-label="Sunset Time (In am/pm)"></td>
+        </tr>
+      </tbody>
+    </table>
+    <footer>
+      <div class="main-content">
+          <div class="left box">
+              <h2>About Me</h2>
+              <div class="content">
+                  <p>"Proficient in HTML, CSS, JavaScript and React js with a keen eye for design and a passion for creating intuitive and engaging user experiences."</p>
+                  <div class="social">
+                    <a href="#"><span class="fa fa-facebook"></span></a>  
+                    <a href="#"><span class="fa fa-instagram"></span></a>  
+                    <a href="#"><span class="fa fa-twitter"></span></a>  
+                    <a href="#"><span class="fa fa-youtube"></span></a>  
+                     
+                  </div>
+              </div>
+          </div>
+       <div class="center box">
+              <h2>Address</h2>
+              <div class="content">
+                  <div class="place">
+                      <span class="fa fa-map-marker" aria-hidden="true"></span>
+                      <span class="text">Korhale Khurd, Baramati, Pune-412103</span>
+                  </div>
+                  <div class="phone">
+                      <span class="fa fa-phone" aria-hidden="true"></span>
+                      <span class="text">+917620055445</span>
+                  </div>
+                  <div class="email">
+                      <span class="fa fa-envelope" aria-hidden="true"></span>
+                      <span class="text">siddheshpawar583@gmail.com</span>
+                  </div>
+              </div>
+           </div>
+
+           <div class="right box">
+              <h2>Contact Us</h2>
+              <form class="content" action="#">
+                  <div class="email">
+                      <div class="text">Email</div>
+                      <input type="email
+                      " required>
+                  </div>
+                  <div class="mag">
+                      <div class="text">Message</div>
+                      <textarea name="" id="" cols="25" rows="2" required></textarea>
+                  </div>
+                  <div class="btn">
+                      <button type="sumit
+                      ">Send</button>
+                  </div>
+              </form>
+           </div>
+
+
+      </div>
+     <div class="bottom">
+      <center>
+          <span class="credit">Created By <a class="name1" href="#">|Siddhesh|</a></span>
+          <span class="fa fa-copyright" aria-hidden="true"></span><span> 2023 All Rights Reserved</span>
+      </center>
+     </div>
+  </footer>
+  </body>
+</html>
