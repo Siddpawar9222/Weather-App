@@ -144,7 +144,7 @@ let  functionDate =(data)=>{
 
 //-----------------------------------------------------------------------------------------
 
-  //Weather information or other common city(4 City)
+  //Weather information for other common city(4 City)
 
 
 const myWeatherA = async(city) => {
@@ -387,7 +387,14 @@ const myWeatherA = async(city) => {
 myAsyncFunction("pune");
  
 
- const cityInput = document.getElementById("city");
+ @keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
  const submitButton = document.getElementById("submit_button");
  submitButton.addEventListener("click", function(event) {
    event.preventDefault(); // Prevent the form from submitting
